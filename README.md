@@ -6,33 +6,44 @@
 
 ## English
 
-**Claudian Excellence** is a custom Agentic Skill designed to bring the advanced cognitive frameworks, task decomposition logic, search-citation guidelines, and behavioral principles of the **Claude Fable 5 System Prompt** to your own AI agents (such as Antigravity, Claude Code, and Codex CLI).
+**Claudian Excellence** is a custom Agentic Skill designed to bring the advanced cognitive frameworks, task-handling strategies, search-citation rules, and behavioral guidelines from the official **Claude Fable 5 System Prompt** to your own AI agents (such as Antigravity, Claude Code, and Codex CLI).
 
-### Core Features
+* **Original System Prompt Source**: [elder-plinius/CL4R1T4S (CLAUDE-FABLE-5.md)](https://github.com/elder-plinius/CL4R1T4S/blob/main/ANTHROPIC/CLAUDE-FABLE-5.md)
 
-1. **Active Task Decomposition**: Instructs the agent to break down abstract or vague queries into specific, executable sub-tasks rather than guessing.
-2. **File Verification First**: Prevents hallucinated edits by enforcing physical inspection of files (using `view`, `cat`, etc.) before any read or write operations.
-3. **Robust Development Principles**: Demands fully-realized code blocks with robust error handling (`try-catch`, parameter checks) and eliminates placeholders.
-4. **Natural Prose & Minimal Formatting**: Encourages the model to communicate in natural, conversational paragraphs and avoid robotic over-formatting (excessive bold text, bullet points).
-5. **Epistemic Humility & Wellbeing Ethics**: Provides standard boundaries for medical/legal/financial topics, including preventing self-harm sensory shock suggestions and ensuring professional referral guidelines.
+---
 
-### Installation
+### How it Works (Principles)
 
-To install this skill on your local agent system:
+System prompts are the "neural constitution" of LLMs. By injecting these rules as an agentic skill, we enforce structured cognitive strategies:
 
-#### For Antigravity / Gemini Agent SDK
+1. **Active Task Decomposition (Chain of Thought)**: AI models perform significantly better when they decompose complex, abstract, or vague requests into explicit, sequential sub-steps. This skill eliminates guesswork and forces logical planning.
+2. **Physical Verification Before Action (Anti-Hallucination)**: LLMs often guess file paths or assume code states. The "verification first" rule requires the agent to check the physical directory/file using `view` or read tools before doing any edits, eliminating hallucination loop-errors.
+3. **Robust Development Enforcement**: Eliminates lazy placeholders (e.g. `// TODO`) and requires strict, self-contained exception handling (`try-catch`, parameter checks), forcing the model to write production-grade code.
+4. **Natural Prose & Noise Reduction**: By restricting excessive bolding, nested lists, and bullet points, the model focuses its attention mechanism on core semantic reasoning and writes clean, cohesive prose.
+5. **Epistemic Humility & Ethics**: Instructs the agent to remain balanced, factual, and legally/ethically compliant without hallucinating diagnostic assertions or false promises.
+
+---
+
+### Installation & Configuration
+
+This skill is designed for agents that support directory-based natural language triggering.
+
+#### 1. For Antigravity / Gemini Agent SDK
+Install to the global agent skills directory:
 ```bash
 mkdir -p ~/.agents/skills/claudian-excellence
 curl -fsSL -o ~/.agents/skills/claudian-excellence/SKILL.md https://raw.githubusercontent.com/lufie/claudian-excellence/main/SKILL.md
 ```
 
-#### For Codex CLI / Claude Code
+#### 2. For Codex CLI / Claude Code
+Install to the local Codex CLI skills folder:
 ```bash
 mkdir -p ~/.codex/skills/claudian-excellence
 curl -fsSL -o ~/.codex/skills/claudian-excellence/SKILL.md https://raw.githubusercontent.com/lufie/claudian-excellence/main/SKILL.md
 ```
 
-Once installed, your agents will dynamically load and enforce these rules during tasks involving writing, coding, searching, and general reasoning.
+#### 3. Project-Level Instructions (`CLAUDE.md`)
+You can also append these rules directly to your project's local developer instruction file (`CLAUDE.md` at the project root) for project-specific compliance.
 
 ---
 
@@ -40,28 +51,39 @@ Once installed, your agents will dynamically load and enforce these rules during
 
 **Claudian Excellence（克劳德卓越实践指导）** 是一款自定义智能体技能（Skill）。它旨在将 **Claude Fable 5 官方系统提示词** 中先进的认知框架、任务拆解逻辑、检索引用规范和人机交互行为法则，无缝复用到你自己的 AI 助理中（如 Antigravity、Claude Code 及 Codex CLI）。
 
-### 核心特性
+* **系统提示词原文件地址**：[elder-plinius/CL4R1T4S (CLAUDE-FABLE-5.md)](https://github.com/elder-plinius/CL4R1T4S/blob/main/ANTHROPIC/CLAUDE-FABLE-5.md)
 
-1. **主动任务拆解**：教导智能体在面对模糊或复杂的任务时，主动进行子任务拆分与逐步推理，避免猜测用户意图。
-2. **文件防错验证**：在对任何文件进行编辑或读取前，必须先调用文件查看工具（如 `view`、`cat` 等）验证其实际内容与结构，根除 AI “想当然”的虚假修改。
-3. **健壮的开发规范**：要求编写逻辑完整、带有异常捕获（`try-catch`）和参数校验的代码，消灭无意义的代码占位符（如 `// TODO`）。
-4. **自然排版风格**：提倡流畅自然的散文（Prose）表达，杜绝滥用多级标题、项目符号和过度粗体，使人机对话更具亲和力和可读性。
-5. **认识论谦逊与福祉伦理**：规范了涉及医疗、法律、财务以及危机干预时的交互界限，避免过度分析与错误的保密承诺，引导用户求助专业渠道。
+---
 
-### 安装方法
+### 运行原理与为什么它会变好
 
-在你的本地智能体系统中安装该技能：
+系统提示词是控制大语言模型（LLM）行为的“运行宪法”。将这些规则作为 Skill 挂载到 Agent 中，可以让 AI 自动遵循以下科学的认知改进方法：
 
-#### 用于 Antigravity / Gemini Agent 框架
+1. **主动任务拆解（思维链提升）**：当遇到复杂、含糊的任务时，AI 往往容易迷失。本技能强制 AI 将任务细化为具体、可执行的子步骤，极大地提高了复杂业务逻辑的准确度。
+2. **物理防错验证（消除幻觉）**：AI 常会凭空猜测本地文件结构或内容。本技能规定在对文件进行任何读取/修改操作之前，必须“亲眼确认”文件内容。这种物理级别的检查彻底切断了 AI 幻觉和盲目修改的恶性循环。
+3. **强制代码健壮性**：限制 AI 编写不完整的代码，消灭诸如 `// TODO` 或空占位符等偷懒行为，并强制加入 `try-catch` 等异常捕获逻辑，产出即用型的高质量生产代码。
+4. **自然排版与注意力降噪**：过多的小标题、粗体和项目符号会分散大模型的注意力权重（Attention Span）。通过规范自然散文（Prose）的输出，逼迫大模型把算力用在最核心的语义组织和逻辑推导上。
+5. **认识论谦逊与伦理安全**：防止智能体在遇到心理健康、法律或财务敏感问题时越界做出武断诊断或虚假承诺，确保交付安全、客观的回答。
+
+---
+
+### 设置与安装方法
+
+本技能兼容支持目录结构和自然语言触发机制的 Agent 系统。
+
+#### 1. 用于 Antigravity / Gemini Agent 框架
+在你的全局智能体技能目录下创建并下载技能：
 ```bash
 mkdir -p ~/.agents/skills/claudian-excellence
 curl -fsSL -o ~/.agents/skills/claudian-excellence/SKILL.md https://raw.githubusercontent.com/lufie/claudian-excellence/main/SKILL.md
 ```
 
-#### 用于 Codex CLI / Claude Code
+#### 2. 用于 Codex CLI / Claude Code
+将技能保存至你本地的 Codex CLI 配置中：
 ```bash
 mkdir -p ~/.codex/skills/claudian-excellence
 curl -fsSL -o ~/.codex/skills/claudian-excellence/SKILL.md https://raw.githubusercontent.com/lufie/claudian-excellence/main/SKILL.md
 ```
 
-安装完成后，智能体将在处理包含编写、代码、搜索、分析、调试等相关意图的任务时，自动触发并遵循该技能的黄金法则。
+#### 3. 项目级规范 (`CLAUDE.md`)
+如果你希望某一特定项目完全遵循该规范，只需将核心要点直接追加到该项目根目录的 `CLAUDE.md` 文件中，智能体在进入该项目时会自动加载。
